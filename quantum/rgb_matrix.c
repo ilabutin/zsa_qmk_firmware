@@ -186,6 +186,9 @@ void rgb_matrix_set_color(int index, uint8_t red, uint8_t green, uint8_t blue) {
 void rgb_matrix_set_color_all(uint8_t red, uint8_t green, uint8_t blue) { rgb_matrix_driver.set_color_all(red, green, blue); }
 
 bool process_rgb_matrix(uint16_t keycode, keyrecord_t *record) {
+    if (record->event.key.custom_keycode) {
+        return true;
+    }
 #if RGB_DISABLE_TIMEOUT > 0
     if (record->event.pressed) {
         rgb_anykey_timer = 0;

@@ -28,6 +28,8 @@ extern "C" {
 typedef struct {
     uint8_t col;
     uint8_t row;
+    bool use_custom_keycode;
+    uint16_t custom_keycode;
 } keypos_t;
 
 /* key event */

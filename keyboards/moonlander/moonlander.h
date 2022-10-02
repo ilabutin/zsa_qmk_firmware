@@ -71,4 +71,6 @@ typedef union {
   };
 } keyboard_config_t;
 
+extern bool mcp23018_leds[3];
+
 extern keyboard_config_t keyboard_config;
